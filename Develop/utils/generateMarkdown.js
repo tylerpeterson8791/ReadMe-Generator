@@ -1,16 +1,32 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-// How can there be no license?  Doesn't list force them to pick one?  Check into how the List type works?
-//start by letting this variable = ""
-//Do some research as to how to render a badge?
-function renderLicenseBadge(license) {}
+//Declare badgeSyntax globally
+var badgeSyntax
+
+//This function matches the corresponding ReadMe Syntax Ready Badge
+function renderLicenseBadge(license) {
+  let badgeSyntax = "";
+
+  if (license === "Apache License (ASF)") {
+    badgeSyntax = "![License Badge ASF](https://img.shields.io/badge/License-Apache-yellow.svg)";
+  } else if (license === "Berkley License (BSD)") {
+    badgeSyntax = "![License Badge BSD](https://img.shields.io/badge/License-BSD-yellow.svg)";
+  } else if (license === "Creative Commons License (CC)") {
+    badgeSyntax = "[![License Badge CC0](https://img.shields.io/badge/License-CC0-yellow.svg)]";
+  } else if (license === "General Public License (GNU)") {
+    badgeSyntax = "![License Badge GNU](https://img.shields.io/badge/License-GNU-yellow)";
+  } else if (license === "MIT License") {
+    badgeSyntax = "![License Badge MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+  } else if (license === "NONE (No License)") {
+    badgeSyntax = "";
+  }
+  return badgeSyntax;
+}
 
 
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 // It'll probably be best to do a if/else and have the links for all my options pop into a variable linkLicense.  This ties to #6 on previous page.
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) { }
 
 
 
@@ -18,7 +34,7 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 // Here is where we smash together a message 'Licensed by' + Link + Name of License
 // Should be fairly straightforward
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) { }
 
 
 
@@ -103,3 +119,7 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
+// module.exports = function(badgeSyntax){
+//   console.log(badgeSyntax);
+// }
