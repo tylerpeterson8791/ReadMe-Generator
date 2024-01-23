@@ -1,8 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// How can there be no license?  Doesn't list force them to pick one?  Check into how the List type works?
-//start by letting this variable = ""
-//Do some research as to how to render a badge?
+//start by letting this variable (URL) = "" set the NONE option to "" as well
+//Here's an example of a MIT badge https://img.shields.io/badge/License-MIT-yellow.svg I gotta go through and grab the naming of the others
+//Create a badge URL that pops in the value with a template literal.  Maybe research some examples.  If enough time let user pick color?
 function renderLicenseBadge(license) {}
 
 
