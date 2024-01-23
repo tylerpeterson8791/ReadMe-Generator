@@ -1,6 +1,7 @@
 //Declare variables globally
 let badgeSyntax
 let licenseLink
+let licenseSection
 
 
 
@@ -54,7 +55,7 @@ function renderLicenseLink(license) {
   }
   return licenseLink;
 
- }
+}
 
 
 
@@ -62,7 +63,17 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 // Here is where we smash together a message 'Licensed by' + Link + Name of License
 // Should be fairly straightforward
-function renderLicenseSection(license) { }
+function renderLicenseSection(license) {
+  let licenseSection = "";
+
+  if (license) {
+    ///I don't know if this syntax is correct????Console log it.
+    licenseSection = `Licensed under [${license}](${renderLicenseBadge(license)})(${renderLicenseLink(license)}).`
+  }
+
+  return licenseSection;
+}
+
 
 
 
