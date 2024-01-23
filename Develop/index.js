@@ -84,12 +84,12 @@ inquirer.prompt([
     {
         type: "input",
         message: "Do you have any contribution guidelines?",
-        name: "usageContrib",
+        name: "howToContrib",
     },
     {
         type: "input",
         message: "Do you have any test instructions?",
-        name: "usageTest",
+        name: "testInstructions",
     },
 
     {

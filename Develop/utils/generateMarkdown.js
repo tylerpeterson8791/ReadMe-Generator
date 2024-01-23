@@ -65,12 +65,7 @@ function renderLicenseLink(license) {
 // Should be fairly straightforward
 function renderLicenseSection(license) {
   let licenseSection = "";
-
-  if (license) {
-    ///I don't know if this syntax is correct????Console log it.
-    licenseSection = `${renderLicenseBadge(license)}   Licensed under ${license}  ${renderLicenseLink(license)}`
-  }
-
+  if (license) {licenseSection = `${renderLicenseBadge(license)}   Licensed under ${license}  ${renderLicenseLink(license)}`}
   return licenseSection;
 }
 
@@ -87,9 +82,9 @@ function generateMarkdown(data) {
   
   ## Description
   
-  ${data.descMotivation}<br>
-  ${data.descWhyBuild}<br>
-  ${data.descProbSolve}<br>
+  ${data.descMotivation}<br/>
+  ${data.descWhyBuild}<br/>
+  ${data.descProbSolve}<br/>
   ${data.descLearn}
   
   
@@ -97,31 +92,39 @@ function generateMarkdown(data) {
   
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contributing](#contributing)
+  - [Credits](#credits)
   - [License](#license)
+  - [How to Contribute](#contributing)
   - [Tests](#tests)
-  - [Questions](#questions)
-  
+  - [Contact](#contact)
+
   ## Installation
   
   ${data.installSteps}
   
   ## Usage
   
-  ${data.usageInfo}<br>
-  ${data.usageContrib}<br>
-  ${data.usageTest}
+  ${data.usageInfo}
+  
   
   ## Credits
 
   ${data.credits}
-  
+
   ## License
   
   ${renderLicenseSection(data.license)}
   
-  ## Contact Me
+  ## Contributing
+
+  ${data.howToContrib}
   
+  ## Tests
+
+  ${data.testInstructions}
+  
+  ## Contact
+
   GitHub profile: [www.github.com/${data.gitHubUser}/](https://www.github.com/${
     data.gitHubUser}/)
   
@@ -131,7 +134,3 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
-
-// module.exports = function(badgeSyntax){
-//   console.log(badgeSyntax);
-// }
