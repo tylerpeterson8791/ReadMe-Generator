@@ -7,7 +7,7 @@ inquirer.prompt([
     {
         type: "input",
         message: "What is the title of your project?",
-        name: "projTitle",
+        name: "title",
         validate: function (input) {
             // Check if the input is not blank.  If the input isn't .trim() then multiple blank spaces will still register an input.  Adding to all required fields.
             return input.trim() !== "" || "Required field. Please enter response.";
