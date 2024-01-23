@@ -1,54 +1,33 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("../utils/generateMarkdown.js");
-
-// TODO: Create an array of questions for user input
-/*
-Here's what we need for questions and the TYPE
-1. Title of project - input ADDED
-2. For the description the Guide suggests the following (all should be input): ADDED
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-3. Installation - What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. (input as well) ADDED
-4. Usage - Provide instructions and examples for use. Include screenshots as needed. (Is this input?  Can I prompt to upload screenshot?  Play with this one.) ADDED
- - Have fields where they can add or not the following:
-    -usage information, 
-    -contribution guidelines, 
-    -test instructions
-5. Credits - Keep this open-ended?  Collaborators?  Resources? Shoutouts? Code credits? Give the user suggestions?  Figure out how to word this part. ADDED
-6. License - This one will be a list.  Pop in 3-4 common ones.  Look up the most used.  Add a NONE option. ADDED
--Apache
--Berkley
--GNU
--ISC
--MIT
--NONE
-7. GitHub Username.  Input.  This question should be earlier. ADDED
-8. Email address. Input.  This question should be earlier. ADDED
-
-NOT A USER INPUT - But don't forget TABLE OF CONTENTS!
-
-
-*/
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 inquirer.prompt([
     {
         type: "input",
         message: "What is the title of your project?",
         name: "projTitle",
+        validate: function (input) {
+            // Check if the input is not blank.  If the input isn't .trim() then multiple blank spaces will still register an input.  Adding to all required fields.
+            return input.trim() !== "" || "Required field. Please enter response.";
+        },
     },
     {
         type: "input",
         message: "What is your GitHub Username?",
         name: "gitHubUser",
+        validate: function (input) {
+            return input.trim() !== "" || "Required field. Please enter response.";
+        },
     },
     {
         type: "input",
         message: "What is your email address?",
         name: "email",
+        validate: function (input) {
+            return input.trim() !== "" || "Required field. Please enter response.";
+        },
     },
     {
         type: "list",
@@ -87,6 +66,9 @@ inquirer.prompt([
         type: "input",
         message: "What were steps needed to install your project?",
         name: "installSteps",
+        validate: function (input) {
+            return input.trim() !== "" || "Required field. Please enter response.";
+        },
     },
 
     //Usage below.  Broken into 3 questions with the first being most important.  If I have time figure out a way to prompt screenshots if possible.
@@ -94,6 +76,9 @@ inquirer.prompt([
         type: "input",
         message: "Provide instructions and examples for use.",
         name: "usageInfo",
+        validate: function (input) {
+            return input.trim() !== "" || "Required field. Please enter response.";
+        },
     },
     {
         type: "input",
@@ -110,26 +95,32 @@ inquirer.prompt([
         type: "input",
         message: "Credits for you project.  List collaborators, third-party assets used and tutorials",
         name: "credits",
+        validate: function (input) {
+            return input.trim() !== "" || "Required field. Please enter response.";
+        },
     },
 
 ])
 
-// TODO: Create a function to write README file
-// Think about how to do this.  fs.writetoFile.  Include an error message and console log Success if correct.
-// I see this code below but could do with arrow function instead?  Play with this one.
-function writeToFile(fileName, data) { }
+    // Write README file using arrow function. Write to MyReadMe doc and call generateMarkdown from generateMarkdown.js
+    // Plugged in console log for error or success to test if this is working.
+    .then((response) => fs.writeFile("MyReadMe.md", generateMarkdown(response),
+        (err) => (err ? console.error(err) : console.log("Success!"))
+    )
+    );
 
-// TODO: Create a function to initialize app ???
+
+//Function to initialize app
 function init() { }
 
-// Function call to initialize app ???
+// Function call to initialize app
 init();
 
 
 
 
 
-
+//CAN USERS INPUT PICTURES IN INQUIRER????
 
 
 /*
