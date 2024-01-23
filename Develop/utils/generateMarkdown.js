@@ -1,24 +1,32 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-//start by letting this variable (URL) = "" set the NONE option to "" as well OR i just have a URL pop and have an instance for each one available?
-//Here's an example of a MIT badge https://img.shields.io/badge/License-MIT-yellow.svg I gotta go through and grab the naming of the others
-//Create a badge URL that pops in the value with a template literal.  Maybe research some examples.  If enough time let user pick color?
-// Readme syntax: ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
+//Declare badgeSyntax globally
+var badgeSyntax
 
-// If Apache License (ASF) THEN ![License Badge ASF](https://img.shields.io/badge/License-Apache-yellow.svg)
-// If Berkley License (BSD) THEN ![License Badge BSD](https://img.shields.io/badge/License-BSD-yellow.svg)
-// If Creative Commons License (CC) THEN [![License Badge CC0](https://img.shields.io/badge/License-CC0-yellow.svg)]
-// If General Public License (GNU) THEN = ![License Badge GNU](https://img.shields.io/badge/License-GNU-yellow)
-// If MIT License THEN ![License Badge MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-// If NONE (No License) THEN ""
-function renderLicenseBadge(license) {}
+//This function matches the corresponding ReadMe Syntax Ready Badge
+function renderLicenseBadge(license) {
+  let badgeSyntax = "";
+
+  if (license === "Apache License (ASF)") {
+    badgeSyntax = "![License Badge ASF](https://img.shields.io/badge/License-Apache-yellow.svg)";
+  } else if (license === "Berkley License (BSD)") {
+    badgeSyntax = "![License Badge BSD](https://img.shields.io/badge/License-BSD-yellow.svg)";
+  } else if (license === "Creative Commons License (CC)") {
+    badgeSyntax = "[![License Badge CC0](https://img.shields.io/badge/License-CC0-yellow.svg)]";
+  } else if (license === "General Public License (GNU)") {
+    badgeSyntax = "![License Badge GNU](https://img.shields.io/badge/License-GNU-yellow)";
+  } else if (license === "MIT License") {
+    badgeSyntax = "![License Badge MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+  } else if (license === "NONE (No License)") {
+    badgeSyntax = "";
+  }
+  return badgeSyntax;
+}
 
 
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 // It'll probably be best to do a if/else and have the links for all my options pop into a variable linkLicense.  This ties to #6 on previous page.
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) { }
 
 
 
@@ -26,7 +34,7 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 // Here is where we smash together a message 'Licensed by' + Link + Name of License
 // Should be fairly straightforward
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) { }
 
 
 
@@ -111,3 +119,7 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
+// module.exports = function(badgeSyntax){
+//   console.log(badgeSyntax);
+// }
