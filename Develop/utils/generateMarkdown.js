@@ -1,8 +1,16 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-//start by letting this variable (URL) = "" set the NONE option to "" as well
+//start by letting this variable (URL) = "" set the NONE option to "" as well OR i just have a URL pop and have an instance for each one available?
 //Here's an example of a MIT badge https://img.shields.io/badge/License-MIT-yellow.svg I gotta go through and grab the naming of the others
 //Create a badge URL that pops in the value with a template literal.  Maybe research some examples.  If enough time let user pick color?
+// Readme syntax: ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+// If Apache License (ASF) THEN 
+// If Berkley License (BSD) THEN
+// If Creative Commons License (CC) THEN [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)]
+// If General Public License (GNU) THEN = ![alt text](https://img.shields.io/badge/License-GNU%20GPL-yellow)
+// If MIT License THEN ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
+// If NONE (No License) THEN ""
 function renderLicenseBadge(license) {}
 
 

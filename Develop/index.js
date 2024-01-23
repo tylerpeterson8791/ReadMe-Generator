@@ -104,10 +104,13 @@ inquirer.prompt([
 
     // Write README file using arrow function. Write to MyReadMe doc and call generateMarkdown from generateMarkdown.js
     // Plugged in console log for error or success to test if this is working.
-    .then((response) => fs.writeFile("MyReadMe.md", generateMarkdown(response),
+    .then((response) => {
+        //adding in a console log so I can see what response.license looks like for badge generation
+        console.log(response.license);
+        fs.writeFile("MyReadMe.md", generateMarkdown(response),
         (err) => (err ? console.error(err) : console.log("Success!"))
     )
-    );
+    });
 
 
 //Function to initialize app
