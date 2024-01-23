@@ -6,37 +6,121 @@ const generateMarkdown = require("../utils/generateMarkdown.js");
 // TODO: Create an array of questions for user input
 /*
 Here's what we need for questions and the TYPE
-1. Title of project - input
-2. For the description the Guide suggests the following (all should be input):
+1. Title of project - input ADDED
+2. For the description the Guide suggests the following (all should be input): ADDED
 - What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
 - What problem does it solve?
 - What did you learn?
-3. Installation - What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. (input as well)
-4. Usage - Provide instructions and examples for use. Include screenshots as needed. (Is this input?  Can I prompt to upload screenshot?  Play with this one.)
+3. Installation - What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. (input as well) ADDED
+4. Usage - Provide instructions and examples for use. Include screenshots as needed. (Is this input?  Can I prompt to upload screenshot?  Play with this one.) ADDED
  - Have fields where they can add or not the following:
     -usage information, 
     -contribution guidelines, 
     -test instructions
-5. Credits - Keep this open-ended?  Collaborators?  Resources? Shoutouts? Code credits? Give the user suggestions?  Figure out how to word this part.
-6. License - This one will be a list.  Pop in 3-4 common ones.  Look up the most used.
-7. GitHub Username.  Input.  This question should be earlier.
-8. Email address. Input.  This question should be earlier.
+5. Credits - Keep this open-ended?  Collaborators?  Resources? Shoutouts? Code credits? Give the user suggestions?  Figure out how to word this part. ADDED
+6. License - This one will be a list.  Pop in 3-4 common ones.  Look up the most used.  Add a NONE option. ADDED
+-Apache
+-Berkley
+-GNU
+-ISC
+-MIT
+-NONE
+7. GitHub Username.  Input.  This question should be earlier. ADDED
+8. Email address. Input.  This question should be earlier. ADDED
 
 NOT A USER INPUT - But don't forget TABLE OF CONTENTS!
 
 
 */
 
-const questions = [];
+inquirer.prompt([
+    {
+        type: "input",
+        message: "What is the title of your project?",
+        name: "projTitle",
+    },
+    {
+        type: "input",
+        message: "What is your GitHub Username?",
+        name: "gitHubUser",
+    },
+    {
+        type: "input",
+        message: "What is your email address?",
+        name: "email",
+    },
+    {
+        type: "list",
+        message: "Choose a license:",
+        choices: [
+            { value: "Apache License (ASF)" },
+            { value: "Berkley License (BSD)" },
+            { value: "Creative Commons License (CC)" },
+            { value: "General Public License (GNU)" },
+            { value: "MIT License" },
+            { value: "NONE (No License)" },
+        ],
+        name: "license",
+    },
+    //description section below.  Broken down into four prompts
+    {
+        type: "input",
+        message: "What was your motivation for your project?",
+        name: "descMotivation",
+    },
+    {
+        type: "input",
+        message: "Why did you build this project?",
+        name: "descWhyBuild",
+    }, {
+        type: "input",
+        message: "What problem does it solve?",
+        name: "descProbSolve",
+    }, {
+        type: "input",
+        message: "What did you learn?",
+        name: "descLearn",
+    },
+    //For the installation below I'm initially going to leave this as one question.  Maybe there's a way to prompt next step or something?  That may be too ambitious for this.
+    {
+        type: "input",
+        message: "What were steps needed to install your project?",
+        name: "installSteps",
+    },
+
+    //Usage below.  Broken into 3 questions with the first being most important.  If I have time figure out a way to prompt screenshots if possible.
+    {
+        type: "input",
+        message: "Provide instructions and examples for use.",
+        name: "usageInfo",
+    },
+    {
+        type: "input",
+        message: "Do you have any contribution guidelines?",
+        name: "usageContrib",
+    },
+    {
+        type: "input",
+        message: "Do you have any test instructions?",
+        name: "usageTest",
+    },
+
+    {
+        type: "input",
+        message: "Credits for you project.  List collaborators, third-party assets used and tutorials",
+        name: "credits",
+    },
+
+])
 
 // TODO: Create a function to write README file
 // Think about how to do this.  fs.writetoFile.  Include an error message and console log Success if correct.
 // I see this code below but could do with arrow function instead?  Play with this one.
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app ???
-function init() {}
+function init() { }
 
 // Function call to initialize app ???
 init();
