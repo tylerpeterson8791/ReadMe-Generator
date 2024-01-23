@@ -5,11 +5,11 @@
 //Create a badge URL that pops in the value with a template literal.  Maybe research some examples.  If enough time let user pick color?
 // Readme syntax: ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-// If Apache License (ASF) THEN 
-// If Berkley License (BSD) THEN
-// If Creative Commons License (CC) THEN [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)]
-// If General Public License (GNU) THEN = ![alt text](https://img.shields.io/badge/License-GNU%20GPL-yellow)
-// If MIT License THEN ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
+// If Apache License (ASF) THEN ![License Badge ASF](https://img.shields.io/badge/License-Apache-yellow.svg)
+// If Berkley License (BSD) THEN ![License Badge BSD](https://img.shields.io/badge/License-BSD-yellow.svg)
+// If Creative Commons License (CC) THEN [![License Badge CC0](https://img.shields.io/badge/License-CC0-yellow.svg)]
+// If General Public License (GNU) THEN = ![License Badge GNU](https://img.shields.io/badge/License-GNU-yellow)
+// If MIT License THEN ![License Badge MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 // If NONE (No License) THEN ""
 function renderLicenseBadge(license) {}
 
