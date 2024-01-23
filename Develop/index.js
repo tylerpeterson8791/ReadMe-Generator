@@ -7,7 +7,7 @@ inquirer.prompt([
     {
         type: "input",
         message: "What is the title of your project?",
-        name: "projTitle",
+        name: "title",
         validate: function (input) {
             // Check if the input is not blank.  If the input isn't .trim() then multiple blank spaces will still register an input.  Adding to all required fields.
             return input.trim() !== "" || "Required field. Please enter response.";
@@ -33,6 +33,7 @@ inquirer.prompt([
         type: "list",
         message: "Choose a license:",
         choices: [
+            //force these into values to use on generateMarkdown
             { value: "Apache License (ASF)" },
             { value: "Berkley License (BSD)" },
             { value: "Creative Commons License (CC)" },
@@ -83,12 +84,12 @@ inquirer.prompt([
     {
         type: "input",
         message: "Do you have any contribution guidelines?",
-        name: "usageContrib",
+        name: "howToContrib",
     },
     {
         type: "input",
         message: "Do you have any test instructions?",
-        name: "usageTest",
+        name: "testInstructions",
     },
 
     {
@@ -104,10 +105,10 @@ inquirer.prompt([
 
     // Write README file using arrow function. Write to MyReadMe doc and call generateMarkdown from generateMarkdown.js
     // Plugged in console log for error or success to test if this is working.
-    .then((response) => {
+    .then((data) => {
         //adding in a console log so I can see what response.license looks like for badge generation
-        console.log(response.license);
-        fs.writeFile("MyReadMe.md", generateMarkdown(response),
+        console.log(data.license);
+        fs.writeFile("MyReadMe.md", generateMarkdown(data),
         (err) => (err ? console.error(err) : console.log("Success!"))
     )
     });
