@@ -1,5 +1,8 @@
-//Declare badgeSyntax globally
-var badgeSyntax
+//Declare variables globally
+let badgeSyntax
+let licenseLink
+
+
 
 //This function matches the corresponding ReadMe Syntax Ready Badge
 function renderLicenseBadge(license) {
@@ -26,7 +29,32 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 // It'll probably be best to do a if/else and have the links for all my options pop into a variable linkLicense.  This ties to #6 on previous page.
-function renderLicenseLink(license) { }
+function renderLicenseLink(license) {
+  let licenseLink = "";
+
+  if (license) {
+    if (license === "Apache License (ASF)") {
+      licenseLink = "https://choosealicense.com/licenses/apache-2.0/";
+    }
+    else if (license === "Berkley License (BSD)") {
+      licenseLink = "https://choosealicense.com/licenses/bsd-3-clause/";
+    }
+    else if (license === "Creative Commons License (CC)") {
+      licenseLink = "https://choosealicense.com/licenses/cc0-1.0/";
+    }
+    else if (license === "General Public License (GNU)") {
+      licenseLink = "https://choosealicense.com/licenses/gpl-3.0/";
+    }
+    else if (license === "MIT License") {
+      licenseLink = "https://choosealicense.com/licenses/mit/";
+    }
+    else if (license === "NONE (No License)") {
+      licenseLink = "";
+    }
+  }
+  return licenseLink;
+
+ }
 
 
 

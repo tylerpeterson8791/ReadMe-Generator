@@ -33,6 +33,7 @@ inquirer.prompt([
         type: "list",
         message: "Choose a license:",
         choices: [
+            //force these into values to use on generateMarkdown
             { value: "Apache License (ASF)" },
             { value: "Berkley License (BSD)" },
             { value: "Creative Commons License (CC)" },
